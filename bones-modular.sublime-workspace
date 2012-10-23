@@ -1,0 +1,358 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"font-s",
+				"font-style	zen:css_properties"
+			],
+			[
+				"dark",
+				"darkOrange"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "/******************************************************************\nTheme Name: Bones - Modular\nTheme URI: http://www.themble.com/bones\nDescription: This site was built using the Bones Development Theme. For more information about Bones or to view documentation, you can visit the <a href=\"https://github.com/eddiemachado/bones/issues\" title=\"Bones Issues\">Bones Issues</a> page on Github. You'll want to customize this for your clients with your own information.\nAuthor: Your Name Here\nAuthor URI: http://www.yoururlhere.com\nVersion: 1.3\nTags: flexble-width, translation-ready, microformats, rtl-language-support\n\nLicense: WTFPL\nLicense URI: http://sam.zoy.org/wtfpl/\nAre You Serious? Yes.\n\n\nMAKE SURE TO READ BELOW BEFORE GETTING STARTED FOR THE FIRST TIME!\n------------------------------------------------------------------\n\nYou may be thinking…\n\nWHOA, WHOA, WHOA…WHAT HAPPENED HERE?\n\nBut before you freak out, let me take a few minutes to explain.\n\nBones now uses LESS or Sass by default. If you're prefer\nusing regular CSS, then feel free to modify this theme how you like\nand keep a copy as your own personal starting point.\n\nDON'T DISMISS IT JUST YET THOUGH, USING LESS or Sass ISN'T AS\nCOMPLICATED AS YOU THINK.\n\nIt does take a few minutes to wrap your head around, but it will all\nbe worth it. Need a quick intro? Here are a few quick reads:\n\nhttp://cognition.happycog.com/article/preprocess-this\nhttp://coding.smashingmagazine.com/2011/09/09/an-introduction-to-less-and-comparison-to-sass/\n\nI would HIGHLY RECOMMEND, if you are going to be working with\nLESS or Sass, that you work locally. Sass isn't readable by a browser\nand using a LESS js file to parse it on live sites can make your site sluggish.\n\nThat being said, here are a few MUST HAVE TOOLS for working with a\npre-processor: (You really only need one of them)\n\nCodeKit: (Highly Recommended)\nhttp://incident57.com/codekit/\n\nLESS App:\nhttp://incident57.com/less/\n\nCompass App: (Windows / Mac Users)\nhttp://compass.handlino.com/\n\nSimpLESS: (Windows Users)\nhttp://wearekiss.com/simpless\n\nWinLESS: (Windows Users)\nhttp://winless.org/\n\nThese applications compile LESS or Sass into valid CSS. This\nway you can keep your production files easy to read and your\nCSS minified and speedy. Simply set the output to the\nlibrary/css folder and you are all set. It's a thing of beauty.\n\n---------------------------------------------------------------\n\nRemember, once you download Bones it's up to you how to use it,\nso go nuts. Set things up and develop in a way that's easiest for\nyou. If LESS/Sass is still a bit confusing for you, then remove them\nand customize this template as you see fit.\n\nIf you're frustrated with this new direction and don't like change,\ntake a few minutes and think about how much better a developer you \ncan become by just TRYING out new technologies. It may be tough at \nfirst but it WILL make you a better developer. TRUST ME ON THIS. Give\nit a week, maybe two, and you will never go back.\n\nHappy Developing!\n\n******************************************************************/\n",
+			"file": "/Users/hal/Documents/ArtFiles/web/repos/bones-modular/style.css",
+			"file_size": 3067,
+			"file_write_time": 1351020960000000,
+			"settings":
+			{
+				"buffer_size": 3063,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 291.0,
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			],
+			[
+				"fet",
+				"Fetch"
+			],
+			[
+				"fetc",
+				"Fetch: Manage remote files"
+			],
+			[
+				"Package Control:",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 435.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/hal/Documents/ArtFiles/web/Locality/yusufov/cms/wp-content/themes/yusufov-criminal-defense/taxonomy-custom_cat.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/yusufov/cms/wp-content/themes/yusufov-criminal-defense/single.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/yusufov/cms/wp-content/themes/yusufov-criminal-defense/single-custom_type.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/yusufov/cms/wp-content/themes/yusufov-criminal-defense/page.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/yusufov/cms/wp-content/themes/yusufov-criminal-defense/page-faq.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/yusufov/cms/wp-content/themes/yusufov-criminal-defense/archive-custom_type.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/yusufov/cms/wp-content/themes/yusufov-criminal-defense/archive.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/yusufov/cms/wp-content/themes/yusufov-criminal-defense/front-page.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/yusufov/cms/wp-content/themes/yusufov-criminal-defense/index.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/yusufov/cms/wp-content/themes/yusufov-criminal-defense/page-custom.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/yusufov/cms/wp-content/themes/yusufov-criminal-defense/search.php",
+		"/Users/hal/Documents/ArtFiles/web/repos/Menu Descriptions Widget/links-from-menu-widget.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/yusufov/cms/wp-content/themes/yusufov-criminal-defense/library/images/yusufov-logo-320.svg",
+		"/Users/hal/Documents/ArtFiles/web/Locality/yusufov/cms/wp-content/themes/yusufov/page-faq.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/yusufov/cms/wp-content/themes/yusufov/page.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/yusufov/cms/wp-content/themes/yusufov/library/admin.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/yusufov/cms/wp-content/themes/yusufov/library/scss/_base.scss",
+		"/Users/hal/Documents/ArtFiles/web/Locality/yusufov/cms/wp-content/themes/yusufov/library/scss/login.scss",
+		"/var/folders/12/6dlmqvld4vj7hs0hmyb7tdyc0000gn/T/sublime-sftp-browse-1350406050/mapped/cms/wp-config.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/yusufov/sftp-config.json",
+		"/Users/hal/Documents/ArtFiles/web/Locality/yusufov/cms/index.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/mcdias/.htaccess",
+		"/Users/hal/Documents/ArtFiles/web/Locality/mcdias/wp-content/themes/mcdiasinc/library/css/style.css",
+		"/Users/hal/Documents/ArtFiles/web/Locality/mcdias/wp-config.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/manybones/wp-config.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2-em/functions.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2-em/library/custom-post-type.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2-em/archive-projects copy 2.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2-em/single-services.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2-em/archive.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2-em/archive-projects.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2-em/single-projects.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2-em/front-page.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2-em/header.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2-em/library/scss/2-mid-up.scss",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2-em/library/scss/1-small-up.scss",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2-em/library/scss/0-base.scss",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2-em/library/scss/_mixins.scss",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2-em/taxonomy-project_category-websites.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-config.php",
+		"/var/folders/12/6dlmqvld4vj7hs0hmyb7tdyc0000gn/T/sublime-sftp-browse-1349807267/mapped/wp-config.php",
+		"/Users/hal/Downloads/fstop2.sql",
+		"/var/folders/12/6dlmqvld4vj7hs0hmyb7tdyc0000gn/T/sublime-sftp-browse-1349811294/mapped/.htaccess",
+		"/var/folders/12/6dlmqvld4vj7hs0hmyb7tdyc0000gn/T/sublime-sftp-browse-1349811801/mapped/wp-content/themes/fstop/library/custom-post-type.php",
+		"/var/folders/12/6dlmqvld4vj7hs0hmyb7tdyc0000gn/T/sublime-sftp-browse-1349812289/mapped/wp-content/themes/fstop/functions.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop/front-page.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2-em/library/bones.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop/functions.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2-em/archive-projects copy.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2-em/footer.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2-em/sidebar.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2-em/404.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2-em/archive-services.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2-em/index.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2-em/page.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2-em/search.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2-em/single-custom_type.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2-em/single.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/index.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/plugins/current-weather/includes/class.wp_current_weather.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2-em/config.rb",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2-em/library/scss/_base.scss",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2-em/library/scss/ie.scss",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2-em/library/scss/style.scss",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2-em/library/js/scripts.js",
+		"/Users/hal/Library/Application Support/Sublime Text 2/Packages/User/SCSS.sublime-settings",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2-em/style.css",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/style.css",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2/.htaccess",
+		"/Users/hal/Library/Application Support/Sublime Text 2/Packages/User/SFTP.errors.log",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2/library/scss/_fonts.scss",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2/library/bones.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2/library/scss/_flexslider.scss",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2/header.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/sftp-config.json",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2/library/js/scripts.js",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2/library/scss/_icons.scss",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2/front-page.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2/library/scss/_768up.scss",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2/library/scss/_481up.scss",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2/library/scss/_base.scss",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2/library/scss/_mixins.scss",
+		"/Users/hal/Library/Application Support/Sublime Text 2/Packages/User/Fetch.sublime-settings",
+		"/var/folders/12/6dlmqvld4vj7hs0hmyb7tdyc0000gn/T/sublime-sftp-browse-1348076531/mapped/wp-content/themes/fstop-1.2/.htaccess",
+		"/var/folders/12/6dlmqvld4vj7hs0hmyb7tdyc0000gn/T/sublime-sftp-browse-1348073815/mapped/.htaccess",
+		"/Users/hal/Downloads/advanced-post-types-order/include/functions.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2/library/scss/responsive-carousel-pagination.scss",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2/front-page-slider.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2/config.rb",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2/library/css/style.css",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2/library/scss/style.scss",
+		"/Users/hal/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/var/folders/12/6dlmqvld4vj7hs0hmyb7tdyc0000gn/T/sublime-sftp-browse-1346012247/mapped/wp-content/themes/fstop-1.2/front-page.php",
+		"/Users/hal/Documents/ArtFiles/web/Locality/fstop/wp-content/themes/fstop-1.2/library/js/scripts-ck.js",
+		"/Users/hal/Downloads/woothemes-FlexSlider-a9168b8/jquery.flexslider-min.js",
+		"/Users/hal/Library/Caches/Cleanup At Startup/Transmit/C7B7866B-9499-4D37-A8C3-9FB3F4630B11/wp-config.php",
+		"/Users/hal/Library/Application Support/Sublime Text 2/Packages/Package Control/Package Control.sublime-settings"
+	],
+	"find":
+	{
+		"height": 37.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/Users/hal/Documents/ArtFiles/web/Locality/yusufov/cms/wp-content/themes/yusufov-criminal-defense",
+			"",
+			"/Users/hal/Documents/ArtFiles/web/Locality/ht-pet/wp-content/plugins/store-locator-le,/Users/hal/Downloads/advanced-post-types-order"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"ul",
+			"and",
+			"wrap",
+			": after",
+			": before",
+			"progid: ",
+			": active",
+			": focus",
+			": hover",
+			" :",
+			"$link-color",
+			"<?php get_sidebar(); ?>",
+			"sidebar",
+			"left",
+			"absurdidad",
+			"gradient",
+			"fstop.wpengine.com",
+			".home",
+			"Project",
+			"project",
+			"Project",
+			"project",
+			"Project",
+			"project",
+			"Projects",
+			"projects",
+			"Custom",
+			"custom",
+			"Custom",
+			"custom",
+			"Custom",
+			"custom",
+			"Custom",
+			"custom",
+			"Custom",
+			"Custom Post",
+			"$k",
+			"wpcw_",
+			"condition",
+			"code",
+			"temperature",
+			"blue",
+			"section",
+			"class",
+			"section",
+			"@media",
+			"960px",
+			"800px",
+			"@media",
+			"768px",
+			"www.nsp-code.com",
+			"IcoMoon",
+			"10.0.1.17",
+			"localhost",
+			"include"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"<?php get_sidebar('sidebar1'); ?>",
+			"li"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Users/hal/Documents/ArtFiles/web/repos/bones-modular/style.css",
+					"settings":
+					{
+						"buffer_size": 3063,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								95,
+								95
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.sftp":
+	{
+		"height": 114.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 376.0,
+	"status_bar_visible": true
+}
