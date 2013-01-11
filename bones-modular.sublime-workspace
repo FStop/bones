@@ -15,17 +15,6 @@
 	},
 	"buffers":
 	[
-		{
-			"contents": "/******************************************************************\nTheme Name: Bones - Modular\nTheme URI: http://www.themble.com/bones\nDescription: This site was built using the Bones Development Theme. For more information about Bones or to view documentation, you can visit the <a href=\"https://github.com/eddiemachado/bones/issues\" title=\"Bones Issues\">Bones Issues</a> page on Github. You'll want to customize this for your clients with your own information.\nAuthor: Your Name Here\nAuthor URI: http://www.yoururlhere.com\nVersion: 1.3\nTags: flexble-width, translation-ready, microformats, rtl-language-support\n\nLicense: WTFPL\nLicense URI: http://sam.zoy.org/wtfpl/\nAre You Serious? Yes.\n\n\nMAKE SURE TO READ BELOW BEFORE GETTING STARTED FOR THE FIRST TIME!\n------------------------------------------------------------------\n\nYou may be thinking…\n\nWHOA, WHOA, WHOA…WHAT HAPPENED HERE?\n\nBut before you freak out, let me take a few minutes to explain.\n\nBones now uses LESS or Sass by default. If you're prefer\nusing regular CSS, then feel free to modify this theme how you like\nand keep a copy as your own personal starting point.\n\nDON'T DISMISS IT JUST YET THOUGH, USING LESS or Sass ISN'T AS\nCOMPLICATED AS YOU THINK.\n\nIt does take a few minutes to wrap your head around, but it will all\nbe worth it. Need a quick intro? Here are a few quick reads:\n\nhttp://cognition.happycog.com/article/preprocess-this\nhttp://coding.smashingmagazine.com/2011/09/09/an-introduction-to-less-and-comparison-to-sass/\n\nI would HIGHLY RECOMMEND, if you are going to be working with\nLESS or Sass, that you work locally. Sass isn't readable by a browser\nand using a LESS js file to parse it on live sites can make your site sluggish.\n\nThat being said, here are a few MUST HAVE TOOLS for working with a\npre-processor: (You really only need one of them)\n\nCodeKit: (Highly Recommended)\nhttp://incident57.com/codekit/\n\nLESS App:\nhttp://incident57.com/less/\n\nCompass App: (Windows / Mac Users)\nhttp://compass.handlino.com/\n\nSimpLESS: (Windows Users)\nhttp://wearekiss.com/simpless\n\nWinLESS: (Windows Users)\nhttp://winless.org/\n\nThese applications compile LESS or Sass into valid CSS. This\nway you can keep your production files easy to read and your\nCSS minified and speedy. Simply set the output to the\nlibrary/css folder and you are all set. It's a thing of beauty.\n\n---------------------------------------------------------------\n\nRemember, once you download Bones it's up to you how to use it,\nso go nuts. Set things up and develop in a way that's easiest for\nyou. If LESS/Sass is still a bit confusing for you, then remove them\nand customize this template as you see fit.\n\nIf you're frustrated with this new direction and don't like change,\ntake a few minutes and think about how much better a developer you \ncan become by just TRYING out new technologies. It may be tough at \nfirst but it WILL make you a better developer. TRUST ME ON THIS. Give\nit a week, maybe two, and you will never go back.\n\nHappy Developing!\n\n******************************************************************/\n",
-			"file": "/Users/hal/Documents/ArtFiles/web/repos/bones-modular/style.css",
-			"file_size": 3067,
-			"file_write_time": 1351020960000000,
-			"settings":
-			{
-				"buffer_size": 3063,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -67,6 +56,27 @@
 	},
 	"file_history":
 	[
+		"/Users/hal/Documents/ArtFiles/web/Locality/wp1/wp-content/themes/bones-modular/library/scss/_481up.scss",
+		"/Users/hal/Documents/ArtFiles/web/Locality/wp1/wp-content/themes/bones-modular/library/scss/_768up.scss",
+		"/Users/hal/Documents/ArtFiles/web/Locality/wp1/wp-content/themes/bones-modular/library/scss/_sidebars.scss",
+		"/Users/hal/Documents/ArtFiles/web/Locality/wp1/wp-content/themes/bones-modular/library/scss/_modules.scss",
+		"/Users/hal/Documents/ArtFiles/web/Locality/wp1/wp-content/themes/bones-modular/library/scss/_footer.scss",
+		"/Users/hal/Documents/ArtFiles/web/Locality/wp1/wp-content/themes/bones-modular/library/scss/_typography.scss",
+		"/Users/hal/Documents/ArtFiles/web/Locality/wp1/wp-content/themes/bones-modular/library/scss/_header.scss",
+		"/Users/hal/Documents/ArtFiles/web/Locality/wp1/wp-content/themes/bones-modular/library/scss/_navigation.scss",
+		"/Users/hal/Documents/ArtFiles/web/Locality/wp1/wp-content/themes/bones-modular/library/scss/style.scss",
+		"/Users/hal/Documents/ArtFiles/web/Locality/wp1/wp-content/themes/bones-modular/library/scss/_layout.scss",
+		"/Users/hal/Documents/ArtFiles/web/Locality/wp1/wp-content/themes/bones-modular/library/scss/0-base.scss",
+		"/Users/hal/Documents/ArtFiles/web/Locality/wp1/wp-content/themes/bones-modular/library/scss/typography.scss",
+		"/Users/hal/Documents/ArtFiles/web/Locality/wp1/wp-content/themes/bones-modular/library/scss/sidebars.scss",
+		"/Users/hal/Documents/ArtFiles/web/Locality/wp1/wp-content/themes/bones-modular/library/scss/navigation.scss",
+		"/Users/hal/Documents/ArtFiles/web/Locality/wp1/wp-content/themes/bones-modular/library/scss/modules.scss",
+		"/Users/hal/Documents/ArtFiles/web/Locality/wp1/wp-content/themes/bones-modular/library/scss/layout.scss",
+		"/Users/hal/Documents/ArtFiles/web/Locality/wp1/wp-content/themes/bones-modular/library/scss/header.scss",
+		"/Users/hal/Documents/ArtFiles/web/Locality/wp1/wp-content/themes/bones-modular/library/scss/footer.scss",
+		"/Users/hal/Documents/ArtFiles/web/Locality/wp1/wp-content/themes/bones-modular/library/scss/mudules.scss",
+		"/Users/hal/Documents/ArtFiles/web/Locality/wp1/wp-content/themes/bones-modular/library/scss/_base.scss",
+		"/Users/hal/Documents/ArtFiles/web/repos/bones-modular/style.css",
 		"/Users/hal/Documents/ArtFiles/web/Locality/yusufov/cms/wp-content/themes/yusufov-criminal-defense/taxonomy-custom_cat.php",
 		"/Users/hal/Documents/ArtFiles/web/Locality/yusufov/cms/wp-content/themes/yusufov-criminal-defense/single.php",
 		"/Users/hal/Documents/ArtFiles/web/Locality/yusufov/cms/wp-content/themes/yusufov-criminal-defense/single-custom_type.php",
@@ -258,38 +268,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/Users/hal/Documents/ArtFiles/web/repos/bones-modular/style.css",
-					"settings":
-					{
-						"buffer_size": 3063,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								95,
-								95
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/CSS/CSS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],

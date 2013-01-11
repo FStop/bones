@@ -1,0 +1,65 @@
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: Layout Stylsheet
+
+******************************************************************/
+
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+
+/* SUSY */
+
+$total-columns  : 12;             // a 12-column grid
+$column-width   : 5em;            // each column is 4em wide
+$gutter-width   : 1em;            // 1em gutters between columns
+$grid-padding   : $gutter-width;  // grid-padding equal to gutters
+
+.wrap {
+	width: 96%;
+	margin: 0 auto;
+}
+
+@include breakpoint(tiny){
+
+	// < 30em / 480px
+
+} // END tiny breakppint
+
+@include breakpoint(small-up){
+
+	// >= 30em / 480px
+
+} // END small-up breakpoint
+
+@include breakpoint(small-mid){
+
+	// 30.0625em / 481px - 47.875em / 767px
+
+} // END small-mid breakpoint
+
+@include breakpoint(mid-up){
+
+	// >= 48em / 768px
+
+} // END mid-up breakpoint
+
+@include breakpoint(mid-big){
+
+	// 48em / 768px - 64em - 1030px
+
+} // END mid-big breakpoint
+
+@include breakpoint(big-up){
+
+	// >= 64.0625em / 1031px
+	
+} // END big-up breakpoint
+
+@include breakpoint(big-huge){
+
+	// 64.0625em / 1031px - 78em / 1240px
+
+} // END big-huge breakpoint

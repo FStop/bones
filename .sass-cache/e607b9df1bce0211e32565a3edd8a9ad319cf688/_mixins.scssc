@@ -1,0 +1,831 @@
+3.2.1 (Media Mark)
+0e0f09944d75349ca2480f45b3a942d1ff32ae7a
+o:Sass::Tree::RootNode
+:
+@linei:@template"#/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Mixins & Constants Stylesheet
+
+This is where you can take advantage of Sass' great features:
+Mixins & Constants. I won't go in-depth on how they work exactly,
+there are a few articles below that will help do that. What I will
+tell you is that this will help speed up simple changes like
+changing a color or adding CSS3 techniques like box shadow and
+border-radius.
+
+A WORD OF WARNING: It's very easy to overdo it here. Be careful and
+remember less is more.
+
+******************************************************************/
+
+/*********************
+CLEARFIXIN'
+*********************/
+
+// Contain floats: nicolasgallagher.com/micro-clearfix-hack/
+%clearfix{
+  zoom: 1;
+	&:before, &:after { content: ""; display: table; }
+	&:after { clear: both; }
+}
+
+/*********************
+TOOLS
+*********************/
+
+// BORDER-BOX ALL THE THINGS! (http://paulirish.com/2012/box-sizing-border-box-ftw/)
+* { 
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing:    border-box; 
+	box-sizing:         border-box; 
+}
+
+// http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/ 
+%image-replacement {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/
+
+$alert-yellow:      #ebe16f;
+$alert-red:         #fbe3e4;
+$alert-green:       #e6efc2;
+$alert-blue:        #d5edf8;
+
+$black:             #000;
+$white:             #fff;
+
+$bones-pink:        #f01d4f;
+$bones-blue:        #1990db;
+
+$link-color:        $bones-pink;
+$link-hover:        darken($link-color, 9%);
+
+/*
+Here's a great tutorial on how to
+use color variables properly:
+http://sachagreif.com/sass-color-variables/
+*/
+
+
+/*********************
+MEDIA QUERIES
+*********************/
+
+@mixin breakpoint($point) {
+	@if $point == hires {
+		@media 
+		only screen and (min--moz-device-pixel-ratio: 1.5), 
+		only screen and (-o-min-device-pixel-ratio: 3/2), 
+		only screen and (-webkit-min-device-pixel-ratio: 1.5),
+		only screen and (min-device-pixel-ratio: 1.5) { @content; }
+	}
+	@if $point == lores {
+		@media 
+		only screen and (max--moz-device-pixel-ratio: 1.4), 
+		only screen and (-o-max-device-pixel-ratio: 7/5), 
+		only screen and (-webkit-max-device-pixel-ratio: 1.4),
+		only screen and (max-device-pixel-ratio: 1.4) { @content; }
+	}
+	@if $point == iphone-five {
+		@media (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2) { @content; }
+	}
+
+	@if $point == big-huge {
+		@media only screen and (min-width: 64.0625em) and (max-width: 78em) { @content; } // 1030px - 1240px
+	}
+	@if $point == big-up {
+		@media only screen and (min-width: 64em) { @content; } // > 1030px
+	}
+	@if $point == mid-big {
+		@media only screen and (min-width: 48em) and (max-width: 64em) { @content; } // 768px - 1030px
+	}
+	@if $point == mid-up {
+		@media only screen and (min-width: 48em) { @content; } // > 768px
+	}
+	@if $point == small-mid {
+		@media only screen and (min-width: 30.0625em) and (max-width: 47.875em) { @content; } // 481 - 768px
+	}
+	@if $point == small-up {
+		@media only screen and (min-width: 30.0625em) { @content; } // > 481px
+	}
+	@else if $point == tiny {
+		@media only screen and (max-width: 30em)  { @content; } // < 480px
+	}
+  
+}
+
+/*********************
+TYPOGRAPHY
+*********************/
+
+$sans-serif:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif:             "Georgia", Cambria, Times New Roman, Times, serif;
+
+
+/* 	To embed your own fonts, use this syntax
+	and place your fonts inside the
+	library/fonts folder. For more information
+	on embedding fonts, go to:
+	http://www.fontsquirrel.com/
+	Be sure to remove the comment brackets.
+*/
+
+/*	@font-face {
+    	font-family: 'Font Name';
+    	src: url('library/fonts/font-name.eot');
+    	src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
+             url('library/fonts/font-name.woff') format('woff'),
+             url('library/fonts/font-name.ttf') format('truetype'),
+             url('library/fonts/font-name.svg#font-name') format('svg');
+    	font-weight: normal;
+    	font-style: normal;
+	}
+*/
+
+/*
+use the best ampersand
+http://simplebits.com/notebook/2008/08/14/ampersands-2/
+*/
+span.amp {
+  font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif !important;
+  font-style: italic;
+}
+
+// text alignment 
+%text-left   { text-align: left; }
+%text-center { text-align: center; }
+%text-right  { text-align: right; }
+
+
+// alerts and notices
+%alert {
+	margin: 10px;
+	padding: 5px 18px;
+	border: 1px solid;
+}
+
+%alert-help {
+	@extend %alert;
+	border-color: darken($alert-yellow, 5%);
+	background: $alert-yellow;
+}
+
+%alert-info {
+	@extend %alert;
+	border-color: darken($alert-blue, 5%);
+	background: $alert-blue;
+}
+
+%alert-error {
+	@extend %alert;
+	border-color: darken($alert-red, 5%);
+	background: $alert-red;
+}
+
+%alert-success {
+	@extend %alert;
+	border-color: darken($alert-green, 5%);
+	background: $alert-green;
+}
+
+/*********************
+BORDER RADIUS
+*********************/
+
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include border-radius(4px 4px 0 0);
+*/
+
+@mixin border-radius($radius...) {
+	// defining prefixes so we can use them in mixins below
+	$prefixes:      ("-webkit", "-moz", "-ms", "-o",  "");
+  @each $prefix in $prefixes {
+    #{$prefix}-border-radius: $radius;
+  }
+
+  border-radius: $radius;
+}
+
+/*********************
+TRANISTION
+*********************/
+
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include transition(all 0.2s ease-in-out);
+*/
+
+@mixin transition($transition...) {
+	// defining prefixes so we can use them in mixins below
+	$prefixes:      ("-webkit", "-moz", "-ms", "-o",  "");
+  @each $prefix in $prefixes {
+    #{$prefix}-transition: $transition;
+  }
+
+  transition: $transition;
+}
+
+
+/*********************
+BOX SHADOWS
+*********************/
+
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include box-shadow(inset 0 0 4px rgba(0,0,0,0.22));
+*/
+
+@mixin box-shadow($shadow...) {
+	// defining prefixes so we can use them in mixins below
+	$prefixes:      ("-webkit", "-moz", "-ms", "-o",  "");
+  @each $prefix in $prefixes {
+    #{$prefix}-box-shadow: $shadow;
+  }
+
+  box-shadow: $shadow;
+}
+
+
+/*********************
+CSS3 GRADIENTS
+Be careful with these since they can
+really slow down your CSS. Don't overdue it.
+*********************/
+
+/* @include css-gradient(#dfdfdf,#f8f8f8); */
+@mixin css-gradient($from: #dfdfdf, $to: #f8f8f8) {
+	background-color: $to;
+	background-image: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+	background-image: -webkit-linear-gradient(top, $from, $to);
+	background-image: -moz-linear-gradient(top, $from, $to);
+	background-image: -o-linear-gradient(top, $from, $to);
+	background-image: linear-gradient(to bottom, $from, $to);
+}
+
+/*********************
+BOX SIZING
+*********************/
+
+/* @include box-sizing(border-box); */
+/* NOTE: value of "padding-box" is only supported in Gecko. So
+probably best not to use it. I mean, were you going to anyway? */
+@mixin box-sizing($type: border-box) {
+	-webkit-box-sizing: $type;
+	-moz-box-sizing:    $type;
+	-ms-box-sizing:     $type;
+	box-sizing:         $type;
+}
+
+
+/*********************
+BUTTONS
+*********************/
+
+.button, .button:visited {
+	font-family: $sans-serif;
+	border: 1px solid darken($link-color, 13%);
+	border-top-color: darken($link-color, 7%);
+	border-left-color: darken($link-color, 7%);
+	padding: 4px 12px;
+	color: $white;
+	display: inline-block;
+	font-size: 11px;
+	font-weight: bold;
+	text-decoration: none;
+	text-shadow: 0 1px rgba(0,0,0, .75);
+	cursor: pointer;
+	margin-bottom: 20px;
+	line-height: 21px;
+	@include border-radius(4px);
+	@include css-gradient($link-color, darken($link-color, 5%));
+
+
+	&:hover, &:focus {
+		color: $white;
+	  	border: 1px solid darken($link-color, 13%);
+	  	border-top-color: darken($link-color, 20%);
+	 	border-left-color: darken($link-color, 20%);
+		@include css-gradient(darken($link-color, 5%), darken($link-color, 10%));
+	}
+
+	&:active {
+		@include css-gradient(darken($link-color, 5%), $link-color);
+	}
+}
+
+.blue-button, .blue-button:visited {
+	border-color: darken($bones-blue, 10%);
+	text-shadow: 0 1px 1px darken($bones-blue, 10%);
+	@include css-gradient( $bones-blue, darken($bones-blue, 5%) );
+	@include box-shadow(inset 0 0 3px lighten($bones-blue, 16%));
+
+	&:hover, &:focus {
+		border-color: darken($bones-blue, 15%);
+		@include css-gradient( darken($bones-blue, 4%), darken($bones-blue, 10%) );
+	}
+	&:active {
+		@include css-gradient( darken($bones-blue, 5%), $bones-blue );
+	}
+}
+:@has_childrenT:@options{ :@children[@o:Sass::Tree::CommentNode
+:@value["q/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Mixins & Constants Stylesheet
+
+This is where you can take advantage of Sass' great features:
+Mixins & Constants. I won't go in-depth on how they work exactly,
+there are a few articles below that will help do that. What I will
+tell you is that this will help speed up simple changes like
+changing a color or adding CSS3 techniques like box shadow and
+border-radius.
+
+A WORD OF WARNING: It's very easy to overdo it here. Be careful and
+remember less is more.
+
+******************************************************************/:
+@type:normal;i;	@;
+[ o;
+;[">/*********************
+CLEARFIXIN'
+*********************/;;;i;	@;
+[ o;
+;["D/* Contain floats: nicolasgallagher.com/micro-clearfix-hack/ */;:silent;i;	@;
+[ o:Sass::Tree::RuleNode:
+@rule["%clearfix:@parsed_ruleso:"Sass::Selector::CommaSequence:@members[o:Sass::Selector::Sequence;[o:#Sass::Selector::SimpleSequence
+;[o: Sass::Selector::Placeholder:@filename" :
+@name["clearfix;i;@:@sourceso:Set:
+@hash{ ;i:@subject0;@;i;i;T;	@:
+@tabsi ;
+[o:Sass::Tree::PropNode:@prop_syntax:new;o:Sass::Script::String;"1;:identifier;	@;["	zoom;i;	@;i ;
+[ o;;["&:before, &:after;o;;[o;;[o;
+;[o:Sass::Selector::Parent;" ;io:Sass::Selector::Pseudo
+;@5;["before;:
+class;i:	@arg0;@5;o;;{ ;i;0o;;[o;
+;[o;$;@5;io;%
+;@5;["
+after;;&;i;'0;@5;o;;{ ;i;0;@5;i;i;T;	@;i ;
+[o;; ;!;o;";""";;#;	@;["content;i;	@;i ;
+[ o;; ;!;o;";"
+table;;#;	@;["display;i;	@;i ;
+[ o;;["&:after;o;;[o;;[o;
+;[o;$;" ;i o;%
+;@\;["
+after;;&;i ;'0;@\;o;;{ ;i ;0;@\;i ;i ;T;	@;i ;
+[o;; ;!;o;";"	both;;#;	@;["
+clear;i ;	@;i ;
+[ o;
+;["8/*********************
+TOOLS
+*********************/;;;i#;	@;
+[ o;
+;["\/* BORDER-BOX ALL THE THINGS! (http://paulirish.com/2012/box-sizing-border-box-ftw/) */;;;i';	@;
+[ o;;["*;o;;[o;;[o;
+;[o:Sass::Selector::Universal;" ;i(:@namespace0;@{;o;;{ ;i(;0;@{;i(;i(;T;	@;i ;
+[o;; ;!;o;";"border-box;;#;	@;["-webkit-box-sizing;i);	@;i ;
+[ o;; ;!;o;";"border-box;;#;	@;["-moz-box-sizing;i*;	@;i ;
+[ o;; ;!;o;";"border-box;;#;	@;["box-sizing;i+;	@;i ;
+[ o;
+;["^/* http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/  */;;;i.;	@;
+[ o;;["%image-replacement;o;;[o;;[o;
+;[o;;" ;["image-replacement;i/;@š;o;;{ ;i/;0;@š;i/;i/;T;	@;i ;
+[o;; ;!;o;";"	100%;;#;	@;["text-indent;i0;	@;i ;
+[ o;; ;!;o;";"nowrap;;#;	@;["white-space;i1;	@;i ;
+[ o;; ;!;o;";"hidden;;#;	@;["overflow;i2;	@;i ;
+[ o;
+;["}/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/;;;i6;	@;
+[ o:Sass::Tree::VariableNode:@guarded0;"alert-yellow;i<:
+@expro:Sass::Script::Color	;0:@attrs{	:redië:
+alphai:
+greeniá:	blueit;i<;	@;	@;
+[ o;*;+0;"alert-red;i=;,o;-	;0;.{	;/iû;0i;1iã;2iä;i=;	@;	@;
+[ o;*;+0;"alert-green;i>;,o;-	;0;.{	;/iæ;0i;1iï;2iÂ;i>;	@;	@;
+[ o;*;+0;"alert-blue;i?;,o;-	;0;.{	;/iÕ;0i;1ií;2iø;i?;	@;	@;
+[ o;*;+0;"
+black;iA;,o;-	;0;.{	;/i ;0i;1i ;2i ;iA;	@;	@;
+[ o;*;+0;"
+white;iB;,o;-	;0;.{	;/iÿ;0i;1iÿ;2iÿ;iB;	@;	@;
+[ o;*;+0;"bones-pink;iD;,o;-	;0;.{	;/ið;0i;1i";2iT;iD;	@;	@;
+[ o;*;+0;"bones-blue;iE;,o;-	;0;.{	;/i;0i;1i;2iÛ;iE;	@;	@;
+[ o;*;+0;"link-color;iG;,o:Sass::Script::Variable	;"bones-pink;iG:@underscored_name"bones_pink;	@;	@;
+[ o;*;+0;"link-hover;iH;,o:Sass::Script::Funcall:
+@args[o;3	;"link-color;iH;4"link_color;	@o:Sass::Script::Number;i:@numerator_units["%:@original"9%;iH;	@:@denominator_units[ ;"darken;iH:@keywords{ ;	@:@splat0;	@;
+[ o;
+;["v/*
+Here's a great tutorial on how to
+use color variables properly:
+http://sachagreif.com/sass-color-variables/
+*/;;;iJ;	@;
+[ o;
+;["@/*********************
+MEDIA QUERIES
+*********************/;;;iQ;	@;
+[ o:Sass::Tree::MixinDefNode;6[[o;3;"
+point;4"
+point;	@0;"breakpoint;iU;T;	@;
+[u:Sass::Tree::IfNode¢[o:Sass::Script::Operation
+:@operator:eq:
+@lineiV:@operand2o:Sass::Script::String	:@value"
+hires:
+@type:identifier;iV:@options{ :@operand1o:Sass::Script::Variable	:
+@name"
+point;iV:@underscored_name"
+point;@	;@	0[o:Sass::Tree::MediaNode;" ;i[:@has_childrenT;@	:
+@tabsi :@children[o:Sass::Tree::ContentNode;i[;@	;[ :@query[,"	only" "screen"
+ and "(o;
+	;" min--moz-device-pixel-ratio;;;iX;@	": o:Sass::Script::Number;f1.5:@numerator_units[ :@original"1.5;iX;@	:@denominator_units[ ")", "	only" "screen"
+ and "(o;
+	;"-o-min-device-pixel-ratio;;;iY;@	": o; 
+;:div;iY;	o;;i;[ ;"2;iY;@	;@ ;o;;i;[ ;"3;iY;@	;@ ;@	")@""	only" "screen"
+ and "(o;
+	;"#-webkit-min-device-pixel-ratio;;;iZ;@	": o;;f1.5;[ ;"1.5;iZ;@	;@ ")@""	only" "screen"
+ and "(o;
+	;"min-device-pixel-ratio;;;i[;@	": o;;f1.5;[ ;"1.5;i[;@	;@ ")u;>Ø[o:Sass::Script::Operation
+:@operator:eq:
+@linei]:@operand2o:Sass::Script::String	:@value"
+lores:
+@type:identifier;i]:@options{ :@operand1o:Sass::Script::Variable	:
+@name"
+point;i]:@underscored_name"
+point;@	;@	0[o:Sass::Tree::MediaNode;" ;ib:@has_childrenT;@	:
+@tabsi :@children[o:Sass::Tree::ContentNode;ib;@	;[ :@query[,"	only" "screen"
+ and "(o;
+	;" max--moz-device-pixel-ratio;;;i_;@	": o:Sass::Script::Number;f1.3999999999999999 ff:@numerator_units[ :@original"1.4;i_;@	:@denominator_units[ ")", "	only" "screen"
+ and "(o;
+	;"-o-max-device-pixel-ratio;;;i`;@	": o; 
+;:div;i`;	o;;i
+;[ ;"5;i`;@	;@ ;o;;i;[ ;"7;i`;@	;@ ;@	")@""	only" "screen"
+ and "(o;
+	;"#-webkit-max-device-pixel-ratio;;;ia;@	": o;;f1.3999999999999999 ff;[ ;"1.4;ia;@	;@ ")@""	only" "screen"
+ and "(o;
+	;"max-device-pixel-ratio;;;ib;@	": o;;f1.3999999999999999 ff;[ ;"1.4;ib;@	;@ ")u;>[[o:Sass::Script::Operation
+:@operator:eq:
+@lineid:@operand2o:Sass::Script::String	:@value"iphone-five:
+@type:identifier;id:@options{ :@operand1o:Sass::Script::Variable	:
+@name"
+point;id:@underscored_name"
+point;@	;@	0[o:Sass::Tree::MediaNode;" ;ie:@has_childrenT;@	:
+@tabsi :@children[o:Sass::Tree::ContentNode;ie;@	;[ :@query["(o;
+	;"device-height;;;ie;@	": o:Sass::Script::Number;i8:@numerator_units["px:@original"
+568px;ie;@	:@denominator_units[ ")"
+ and "(o;
+	;"#-webkit-min-device-pixel-ratio;;;ie;@	": o;;i;[ ;"2;ie;@	;[ ")u;>³[o:Sass::Script::Operation
+:@operator:eq:
+@lineih:@operand2o:Sass::Script::String	:@value"big-huge:
+@type:identifier;ih:@options{ :@operand1o:Sass::Script::Variable	:
+@name"
+point;ih:@underscored_name"
+point;@	;@	0[o:Sass::Tree::MediaNode;" ;ii:@has_childrenT;@	:
+@tabsi :@children[o:Sass::Tree::ContentNode;ii;@	;[ :@query["	only" "screen"
+ and "(o;
+	;"min-width;;;ii;@	": o:Sass::Script::Number;f64.0625:@numerator_units["em:@original"64.0625em;ii;@	:@denominator_units[ ")"
+ and "(o;
+	;"max-width;;;ii;@	": o;;iS;["em;"	78em;ii;@	;[ ")o:Sass::Tree::CommentNode
+;["/* 1030px - 1240px */;:silent;ii;@	;[ u;>L[o:Sass::Script::Operation
+:@operator:eq:
+@lineik:@operand2o:Sass::Script::String	:@value"big-up:
+@type:identifier;ik:@options{ :@operand1o:Sass::Script::Variable	:
+@name"
+point;ik:@underscored_name"
+point;@	;@	0[o:Sass::Tree::MediaNode;" ;il:@has_childrenT;@	:
+@tabsi :@children[o:Sass::Tree::ContentNode;il;@	;[ :@query["	only" "screen"
+ and "(o;
+	;"min-width;;;il;@	": o:Sass::Script::Number;iE:@numerator_units["em:@original"	64em;il;@	:@denominator_units[ ")o:Sass::Tree::CommentNode
+;["/* > 1030px */;:silent;il;@	;[ u;>¥[o:Sass::Script::Operation
+:@operator:eq:
+@linein:@operand2o:Sass::Script::String	:@value"mid-big:
+@type:identifier;in:@options{ :@operand1o:Sass::Script::Variable	:
+@name"
+point;in:@underscored_name"
+point;@	;@	0[o:Sass::Tree::MediaNode;" ;io:@has_childrenT;@	:
+@tabsi :@children[o:Sass::Tree::ContentNode;io;@	;[ :@query["	only" "screen"
+ and "(o;
+	;"min-width;;;io;@	": o:Sass::Script::Number;i5:@numerator_units["em:@original"	48em;io;@	:@denominator_units[ ")"
+ and "(o;
+	;"max-width;;;io;@	": o;;iE;["em;"	64em;io;@	;[ ")o:Sass::Tree::CommentNode
+;["/* 768px - 1030px */;:silent;io;@	;[ u;>K[o:Sass::Script::Operation
+:@operator:eq:
+@lineiq:@operand2o:Sass::Script::String	:@value"mid-up:
+@type:identifier;iq:@options{ :@operand1o:Sass::Script::Variable	:
+@name"
+point;iq:@underscored_name"
+point;@	;@	0[o:Sass::Tree::MediaNode;" ;ir:@has_childrenT;@	:
+@tabsi :@children[o:Sass::Tree::ContentNode;ir;@	;[ :@query["	only" "screen"
+ and "(o;
+	;"min-width;;;ir;@	": o:Sass::Script::Number;i5:@numerator_units["em:@original"	48em;ir;@	:@denominator_units[ ")o:Sass::Tree::CommentNode
+;["/* > 768px */;:silent;ir;@	;[ u;>º[o:Sass::Script::Operation
+:@operator:eq:
+@lineit:@operand2o:Sass::Script::String	:@value"small-mid:
+@type:identifier;it:@options{ :@operand1o:Sass::Script::Variable	:
+@name"
+point;it:@underscored_name"
+point;@	;@	0[o:Sass::Tree::MediaNode;" ;iu:@has_childrenT;@	:
+@tabsi :@children[o:Sass::Tree::ContentNode;iu;@	;[ :@query["	only" "screen"
+ and "(o;
+	;"min-width;;;iu;@	": o:Sass::Script::Number;f30.0625:@numerator_units["em:@original"30.0625em;iu;@	:@denominator_units[ ")"
+ and "(o;
+	;"max-width;;;iu;@	": o;;f47.875;["em;"47.875em;iu;@	;[ ")o:Sass::Tree::CommentNode
+;["/* 481 - 768px */;:silent;iu;@	;[ u;>¹[o:Sass::Script::Operation
+:@operator:eq:
+@lineiw:@operand2o:Sass::Script::String	:@value"small-up:
+@type:identifier;iw:@options{ :@operand1o:Sass::Script::Variable	:
+@name"
+point;iw:@underscored_name"
+point;@	;@	u:Sass::Tree::IfNodeI[o:Sass::Script::Operation
+:@operator:eq:
+@lineiz:@operand2o:Sass::Script::String	:@value"	tiny:
+@type:identifier;iz:@options{ :@operand1o:Sass::Script::Variable	:
+@name"
+point;iz:@underscored_name"
+point;@	;@	0[o:Sass::Tree::MediaNode;" ;i{:@has_childrenT;@	:
+@tabsi :@children[o:Sass::Tree::ContentNode;i{;@	;[ :@query["	only" "screen"
+ and "(o;
+	;"max-width;;;i{;@	": o:Sass::Script::Number;i#:@numerator_units["em:@original"	30em;i{;@	:@denominator_units[ ")o:Sass::Tree::CommentNode
+;["/* < 480px */;:silent;i{;@	;[ [o:Sass::Tree::MediaNode;" ;ix:@has_childrenT;@	:
+@tabsi :@children[o:Sass::Tree::ContentNode;ix;@	;[ :@query["	only" "screen"
+ and "(o;
+	;"min-width;;;ix;@	": o:Sass::Script::Number;f30.0625:@numerator_units["em:@original"30.0625em;ix;@	:@denominator_units[ ")o:Sass::Tree::CommentNode
+;["/* > 481px */;:silent;ix;@	;[ ;<0o;
+;["=/*********************
+TYPOGRAPHY
+*********************/;;;i{;	@;
+[ o;*;+0;"sans-serif;i;,o:Sass::Script::List	;[	o;"	;"Helvetica Neue;:string;i;	@o;"	;"Helvetica;;#;i;	@o;"	;"
+Arial;;#;i;	@o;"	;"sans-serif;;#;i;	@;i:@separator:
+comma;	@;	@;
+[ o;*;+0;"
+serif;i€;,o;?	;[
+o;"	;"Georgia;;@;i€;	@o;"	;"Cambria;;#;i€;	@o;?	;[o;"	;"
+Times;;#;i€;	@o;"	;"New;;#;i€;	@o;"	;"
+Roman;;#;i€;	@;i€;A:
+space;	@o;"	;"
+Times;;#;i€;	@o;"	;"
+serif;;#;i€;	@;i€;A;B;	@;	@;
+[ o;
+;["ß/* 	To embed your own fonts, use this syntax
+	and place your fonts inside the
+	library/fonts folder. For more information
+	on embedding fonts, go to:
+	http://www.fontsquirrel.com/
+	Be sure to remove the comment brackets.
+*/;;;iƒ;	@;
+[ o;
+;["´/*	@font-face {
+    	font-family: 'Font Name';
+    	src: url('library/fonts/font-name.eot');
+    	src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
+             url('library/fonts/font-name.woff') format('woff'),
+             url('library/fonts/font-name.ttf') format('truetype'),
+             url('library/fonts/font-name.svg#font-name') format('svg');
+    	font-weight: normal;
+    	font-style: normal;
+	}
+*/;;;i‹;	@;
+[ o;
+;["Y/*
+use the best ampersand
+http://simplebits.com/notebook/2008/08/14/ampersands-2/
+*/;;;i—;	@;
+[ o;;["span.amp;o;;[o;;[o;
+;[o:Sass::Selector::Element	;" ;["	span;i›;)0o:Sass::Selector::Class;@H;["amp;i›;@H;o;;{ ;i›;0;@H;i›;i›;T;	@;i ;
+[o;; ;!;o;";"KBaskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif !important;;#;	@;["font-family;iœ;	@;i ;
+[ o;; ;!;o;";"italic;;#;	@;["font-style;i;	@;i ;
+[ o;
+;["/* text alignment  */;;;i ;	@;
+[ o;;["%text-left;o;;[o;;[o;
+;[o;;" ;["text-left;i¡;@k;o;;{ ;i¡;0;@k;i¡;i¡;T;	@;i ;
+[o;; ;!;o;";"	left;;#;	@;["text-align;i¡;	@;i ;
+[ o;;["%text-center;o;;[o;;[o;
+;[o;;" ;["text-center;i¢;@;o;;{ ;i¢;0;@;i¢;i¢;T;	@;i ;
+[o;; ;!;o;";"center;;#;	@;["text-align;i¢;	@;i ;
+[ o;;["%text-right;o;;[o;;[o;
+;[o;;" ;["text-right;i£;@—;o;;{ ;i£;0;@—;i£;i£;T;	@;i ;
+[o;; ;!;o;";"
+right;;#;	@;["text-align;i£;	@;i ;
+[ o;
+;["/* alerts and notices */;;;i¦;	@;
+[ o;;["%alert;o;;[o;;[o;
+;[o;;" ;["
+alert;i§;@±;o;;{ ;i§;0;@±;i§;i§;T;	@;i ;
+[o;; ;!;o;";"	10px;;#;	@;["margin;i¨;	@;i ;
+[ o;; ;!;o;";"5px 18px;;#;	@;["padding;i©;	@;i ;
+[ o;; ;!;o;";"1px solid;;#;	@;["border;iª;	@;i ;
+[ o;;["%alert-help;o;;[o;;[o;
+;[o;;" ;["alert-help;i­;@Ó;o;;{ ;i­;0;@Ó;i­;i­;T;	@;i ;
+[o:Sass::Tree::ExtendNode
+;i®:@selector["%"
+alert;	@:@optionalF;
+[ o;; ;!;o;5;6[o;3	;"alert-yellow;i¯;4"alert_yellow;	@o;7;i
+;8["%;9"5%;i¯;	@;:[ ;"darken;i¯;;{ ;	@;<0;["border-color;i¯;	@;i ;
+[ o;; ;!;o;3	;"alert-yellow;i°;4"alert_yellow;	@;["background;i°;	@;i ;
+[ o;;["%alert-info;o;;[o;;[o;
+;[o;;" ;["alert-info;i³;@ÿ;o;;{ ;i³;0;@ÿ;i³;i³;T;	@;i ;
+[o;F
+;i´;G["%"
+alert;	@;HF;
+[ o;; ;!;o;5;6[o;3	;"alert-blue;iµ;4"alert_blue;	@o;7;i
+;8["%;9"5%;iµ;	@;:[ ;"darken;iµ;;{ ;	@;<0;["border-color;iµ;	@;i ;
+[ o;; ;!;o;3	;"alert-blue;i¶;4"alert_blue;	@;["background;i¶;	@;i ;
+[ o;;["%alert-error;o;;[o;;[o;
+;[o;;" ;["alert-error;i¹;@+;o;;{ ;i¹;0;@+;i¹;i¹;T;	@;i ;
+[o;F
+;iº;G["%"
+alert;	@;HF;
+[ o;; ;!;o;5;6[o;3	;"alert-red;i»;4"alert_red;	@o;7;i
+;8["%;9"5%;i»;	@;:[ ;"darken;i»;;{ ;	@;<0;["border-color;i»;	@;i ;
+[ o;; ;!;o;3	;"alert-red;i¼;4"alert_red;	@;["background;i¼;	@;i ;
+[ o;;["%alert-success;o;;[o;;[o;
+;[o;;" ;["alert-success;i¿;@W;o;;{ ;i¿;0;@W;i¿;i¿;T;	@;i ;
+[o;F
+;iÀ;G["%"
+alert;	@;HF;
+[ o;; ;!;o;5;6[o;3	;"alert-green;iÁ;4"alert_green;	@o;7;i
+;8["%;9"5%;iÁ;	@;:[ ;"darken;iÁ;;{ ;	@;<0;["border-color;iÁ;	@;i ;
+[ o;; ;!;o;3	;"alert-green;iÂ;4"alert_green;	@;["background;iÂ;	@;i ;
+[ o;
+;["@/*********************
+BORDER RADIUS
+*********************/;;;iÅ;	@;
+[ o;
+;["Ô/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include border-radius(4px 4px 0 0);
+*/;;;iÉ;	@;
+[ o;=;6[ ;"border-radius;iÐ;T;	@;
+[	o;
+;["?/* defining prefixes so we can use them in mixins below */;;;iÑ;	@;
+[ o;*;+0;"prefixes;iÒ;,o;?	;[
+o;"	;"-webkit;;@;iÒ;	@o;"	;"	-moz;;@;iÒ;	@o;"	;"-ms;;@;iÒ;	@o;"	;"-o;;@;iÒ;	@o;"	;" ;;@;iÒ;	@;iÒ;A;B;	@;	@;
+[ o:Sass::Tree::EachNode:
+@listo;3	;"prefixes;iÓ;4"prefixes;	@;iÓ;T;	@:	@var"prefix;
+[o;; ;!;o;3	;"radius;iÔ;4"radius;	@;[o;3	;"prefix;iÔ;4"prefix;	@"-border-radius;iÔ;	@;i ;
+[ o;; ;!;o;3	;"radius;i×;4"radius;	@;["border-radius;i×;	@;i ;
+[ ;<o;3;"radius;4"radius;	{ o;
+;["=/*********************
+TRANISTION
+*********************/;;;iÚ;	@;
+[ o;
+;["Ú/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include transition(all 0.2s ease-in-out);
+*/;;;iÞ;	@;
+[ o;=;6[ ;"transition;iå;T;	@;
+[	o;
+;["?/* defining prefixes so we can use them in mixins below */;;;iæ;	@;
+[ o;*;+0;"prefixes;iç;,o;?	;[
+o;"	;"-webkit;;@;iç;	@o;"	;"	-moz;;@;iç;	@o;"	;"-ms;;@;iç;	@o;"	;"-o;;@;iç;	@o;"	;" ;;@;iç;	@;iç;A;B;	@;	@;
+[ o;I;Jo;3	;"prefixes;iè;4"prefixes;	@;iè;T;	@;K"prefix;
+[o;; ;!;o;3	;"transition;ié;4"transition;	@;[o;3	;"prefix;ié;4"prefix;	@"-transition;ié;	@;i ;
+[ o;; ;!;o;3	;"transition;iì;4"transition;	@;["transition;iì;	@;i ;
+[ ;<o;3;"transition;4"transition;	{ o;
+;[">/*********************
+BOX SHADOWS
+*********************/;;;ið;	@;
+[ o;
+;["ä/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include box-shadow(inset 0 0 4px rgba(0,0,0,0.22));
+*/;;;iô;	@;
+[ o;=;6[ ;"box-shadow;iû;T;	@;
+[	o;
+;["?/* defining prefixes so we can use them in mixins below */;;;iü;	@;
+[ o;*;+0;"prefixes;iý;,o;?	;[
+o;"	;"-webkit;;@;iý;	@o;"	;"	-moz;;@;iý;	@o;"	;"-ms;;@;iý;	@o;"	;"-o;;@;iý;	@o;"	;" ;;@;iý;	@;iý;A;B;	@;	@;
+[ o;I;Jo;3	;"prefixes;iþ;4"prefixes;	@;iþ;T;	@;K"prefix;
+[o;; ;!;o;3	;"shadow;iÿ;4"shadow;	@;[o;3	;"prefix;iÿ;4"prefix;	@"-box-shadow;iÿ;	@;i ;
+[ o;; ;!;o;3	;"shadow;i;4"shadow;	@;["box-shadow;i;	@;i ;
+[ ;<o;3;"shadow;4"shadow;	{ o;
+;["Ž/*********************
+CSS3 GRADIENTS
+Be careful with these since they can
+really slow down your CSS. Don't overdue it.
+*********************/;;;i;	@;
+[ o;
+;["2/* @include css-gradient(#dfdfdf,#f8f8f8); */;;;i;	@;
+[ o;=;6[[o;3;"	from;4"	from;	@o;-	;0;.{	;/iß;0i;1iß;2iß;i;	@[o;3;"to;4"to;	@o;-	;0;.{	;/iø;0i;1iø;2iø;i;	@;"css-gradient;i;T;	@;
+[o;; ;!;o;3	;"to;i;4"to;	@;["background-color;i;	@;i ;
+[ o;; ;!;o;5;6[
+o;"	;"linear;;#;i;	@o;?	;[o;"	;"	left;;#;i;	@o;"	;"top;;#;i;	@;i;A;C;	@o;?	;[o;"	;"	left;;#;i;	@o;"	;"bottom;;#;i;	@;i;A;C;	@o;5;6[o;3	;"	from;i;4"	from;	@;"	from;i;;{ ;	@;<0o;5;6[o;3	;"to;i;4"to;	@;"to;i;;{ ;	@;<0;"-webkit-gradient;i;;{ ;	@;<0;["background-image;i;	@;i ;
+[ o;; ;!;o;5;6[o;"	;"top;;#;i;	@o;3	;"	from;i;4"	from;	@o;3	;"to;i;4"to;	@;"-webkit-linear-gradient;i;;{ ;	@;<0;["background-image;i;	@;i ;
+[ o;; ;!;o;5;6[o;"	;"top;;#;i;	@o;3	;"	from;i;4"	from;	@o;3	;"to;i;4"to;	@;"-moz-linear-gradient;i;;{ ;	@;<0;["background-image;i;	@;i ;
+[ o;; ;!;o;5;6[o;"	;"top;;#;i;	@o;3	;"	from;i;4"	from;	@o;3	;"to;i;4"to;	@;"-o-linear-gradient;i;;{ ;	@;<0;["background-image;i;	@;i ;
+[ o;; ;!;o;5;6[o;?	;[o;"	;"to;;#;i;	@o;"	;"bottom;;#;i;	@;i;A;C;	@o;3	;"	from;i;4"	from;	@o;3	;"to;i;4"to;	@;"linear-gradient;i;;{ ;	@;<0;["background-image;i;	@;i ;
+[ ;<0o;
+;["=/*********************
+BOX SIZING
+*********************/;;;i;	@;
+[ o;
+;["+/* @include box-sizing(border-box); */;;;i;	@;
+[ o;
+;["€/* NOTE: value of "padding-box" is only supported in Gecko. So
+probably best not to use it. I mean, were you going to anyway? */;;;i;	@;
+[ o;=;6[[o;3;"	type;4"	type;	@o;"	;"border-box;;#;i;	@;"box-sizing;i;T;	@;
+[	o;; ;!;o;3	;"	type;i;4"	type;	@;["-webkit-box-sizing;i;	@;i ;
+[ o;; ;!;o;3	;"	type;i;4"	type;	@;["-moz-box-sizing;i;	@;i ;
+[ o;; ;!;o;3	;"	type;i ;4"	type;	@;["-ms-box-sizing;i ;	@;i ;
+[ o;; ;!;o;3	;"	type;i!;4"	type;	@;["box-sizing;i!;	@;i ;
+[ ;<0o;
+;[":/*********************
+BUTTONS
+*********************/;;;i%;	@;
+[ o;;[".button, .button:visited;o;;[o;;[o;
+;[o;E;" ;["button;i);@î;o;;{ ;i);0o;;[o;
+;[o;E;@î;["button;i)o;%
+;@î;["visited;;&;i);'0;@î;o;;{ ;i);0;@î;i);i);T;	@;i ;
+[o;; ;!;o;3	;"sans-serif;i*;4"sans_serif;	@;["font-family;i*;	@;i ;
+[ o;; ;!;o;?	;[o;7;i;8["px;9"1px;i+;	@;:[ o;"	;"
+solid;;#;i+;	@o;5;6[o;3	;"link-color;i+;4"link_color;	@o;7;i;8["%;9"13%;i+;	@;:[ ;"darken;i+;;{ ;	@;<0;i+;A;C;	@;["border;i+;	@;i ;
+[ o;; ;!;o;5;6[o;3	;"link-color;i,;4"link_color;	@o;7;i;8["%;9"7%;i,;	@;:[ ;"darken;i,;;{ ;	@;<0;["border-top-color;i,;	@;i ;
+[ o;; ;!;o;5;6[o;3	;"link-color;i-;4"link_color;	@o;7;i;8["%;9"7%;i-;	@;:[ ;"darken;i-;;{ ;	@;<0;["border-left-color;i-;	@;i ;
+[ o;; ;!;o;";"4px 12px;;#;	@;["padding;i.;	@;i ;
+[ o;; ;!;o;3	;"
+white;i/;4"
+white;	@;["
+color;i/;	@;i ;
+[ o;; ;!;o;";"inline-block;;#;	@;["display;i0;	@;i ;
+[ o;; ;!;o;";"	11px;;#;	@;["font-size;i1;	@;i ;
+[ o;; ;!;o;";"	bold;;#;	@;["font-weight;i2;	@;i ;
+[ o;; ;!;o;";"	none;;#;	@;["text-decoration;i3;	@;i ;
+[ o;; ;!;o;?	;[o;7;i ;8[ ;9"0;i4;	@;:[ o;7;i;8["px;9"1px;i4;	@;:[ o;5;6[	o;7;i ;8[ ;9"0;i4;	@;:@ko;7;i ;8[ ;9"0;i4;	@;:@ko;7;i ;8[ ;9"0;i4;	@;:@ko;7;f	0.75;8[ ;9"	0.75;i4;	@;:@k;"	rgba;i4;;{ ;	@;<0;i4;A;C;	@;["text-shadow;i4;	@;i ;
+[ o;; ;!;o;";"pointer;;#;	@;["cursor;i5;	@;i ;
+[ o;; ;!;o;";"	20px;;#;	@;["margin-bottom;i6;	@;i ;
+[ o;; ;!;o;";"	21px;;#;	@;["line-height;i7;	@;i ;
+[ o:Sass::Tree::MixinNode;6[o;7;i	;8["px;9"4px;i8;	@;:[ ;"border-radius;i8;;{ ;	@;
+[ ;<0o;L;6[o;3	;"link-color;i9;4"link_color;	@o;5;6[o;3	;"link-color;i9;4"link_color;	@o;7;i
+;8["%;9"5%;i9;	@;:[ ;"darken;i9;;{ ;	@;<0;"css-gradient;i9;;{ ;	@;
+[ ;<0o;;["&:hover, &:focus;o;;[o;;[o;
+;[o;$;" ;i<o;%
+;@¿;["
+hover;;&;i<;'0;@¿;o;;{ ;i<;0o;;[o;
+;[o;$;@¿;i<o;%
+;@¿;["
+focus;;&;i<;'0;@¿;o;;{ ;i<;0;@¿;i<;i<;T;	@;i ;
+[
+o;; ;!;o;3	;"
+white;i=;4"
+white;	@;["
+color;i=;	@;i ;
+[ o;; ;!;o;?	;[o;7;i;8["px;9"1px;i>;	@;:[ o;"	;"
+solid;;#;i>;	@o;5;6[o;3	;"link-color;i>;4"link_color;	@o;7;i;8["%;9"13%;i>;	@;:[ ;"darken;i>;;{ ;	@;<0;i>;A;C;	@;["border;i>;	@;i ;
+[ o;; ;!;o;5;6[o;3	;"link-color;i?;4"link_color;	@o;7;i;8["%;9"20%;i?;	@;:[ ;"darken;i?;;{ ;	@;<0;["border-top-color;i?;	@;i ;
+[ o;; ;!;o;5;6[o;3	;"link-color;i@;4"link_color;	@o;7;i;8["%;9"20%;i@;	@;:[ ;"darken;i@;;{ ;	@;<0;["border-left-color;i@;	@;i ;
+[ o;L;6[o;5;6[o;3	;"link-color;iA;4"link_color;	@o;7;i
+;8["%;9"5%;iA;	@;:[ ;"darken;iA;;{ ;	@;<0o;5;6[o;3	;"link-color;iA;4"link_color;	@o;7;i;8["%;9"10%;iA;	@;:[ ;"darken;iA;;{ ;	@;<0;"css-gradient;iA;;{ ;	@;
+[ ;<0o;;["&:active;o;;[o;;[o;
+;[o;$;" ;iDo;%
+;@7;["active;;&;iD;'0;@7;o;;{ ;iD;0;@7;iD;iD;T;	@;i ;
+[o;L;6[o;5;6[o;3	;"link-color;iE;4"link_color;	@o;7;i
+;8["%;9"5%;iE;	@;:[ ;"darken;iE;;{ ;	@;<0o;3	;"link-color;iE;4"link_color;	@;"css-gradient;iE;;{ ;	@;
+[ ;<0o;;["'.blue-button, .blue-button:visited;o;;[o;;[o;
+;[o;E;" ;["blue-button;iI;@\;o;;{ ;iI;0o;;[o;
+;[o;E;@\;["blue-button;iIo;%
+;@\;["visited;;&;iI;'0;@\;o;;{ ;iI;0;@\;iI;iI;T;	@;i ;
+[o;; ;!;o;5;6[o;3	;"bones-blue;iJ;4"bones_blue;	@o;7;i;8["%;9"10%;iJ;	@;:[ ;"darken;iJ;;{ ;	@;<0;["border-color;iJ;	@;i ;
+[ o;; ;!;o;?	;[	o;7;i ;8[ ;9"0;iK;	@;:@ko;7;i;8["px;9"1px;iK;	@;:[ o;7;i;8["px;9"1px;iK;	@;:[ o;5;6[o;3	;"bones-blue;iK;4"bones_blue;	@o;7;i;8["%;9"10%;iK;	@;:[ ;"darken;iK;;{ ;	@;<0;iK;A;C;	@;["text-shadow;iK;	@;i ;
+[ o;L;6[o;3	;"bones-blue;iL;4"bones_blue;	@o;5;6[o;3	;"bones-blue;iL;4"bones_blue;	@o;7;i
+;8["%;9"5%;iL;	@;:[ ;"darken;iL;;{ ;	@;<0;"css-gradient;iL;;{ ;	@;
+[ ;<0o;L;6[o;?	;[
+o;"	;"
+inset;;#;iM;	@o;7;i ;8[ ;9"0;iM;	@;:@ko;7;i ;8[ ;9"0;iM;	@;:@ko;7;i;8["px;9"3px;iM;	@;:[ o;5;6[o;3	;"bones-blue;iM;4"bones_blue;	@o;7;i;8["%;9"16%;iM;	@;:[ ;"lighten;iM;;{ ;	@;<0;iM;A;C;	@;"box-shadow;iM;;{ ;	@;
+[ ;<0o;;["&:hover, &:focus;o;;[o;;[o;
+;[o;$;" ;iOo;%
+;@Û;["
+hover;;&;iO;'0;@Û;o;;{ ;iO;0o;;[o;
+;[o;$;@Û;iOo;%
+;@Û;["
+focus;;&;iO;'0;@Û;o;;{ ;iO;0;@Û;iO;iO;T;	@;i ;
+[o;; ;!;o;5;6[o;3	;"bones-blue;iP;4"bones_blue;	@o;7;i;8["%;9"15%;iP;	@;:[ ;"darken;iP;;{ ;	@;<0;["border-color;iP;	@;i ;
+[ o;L;6[o;5;6[o;3	;"bones-blue;iQ;4"bones_blue;	@o;7;i	;8["%;9"4%;iQ;	@;:[ ;"darken;iQ;;{ ;	@;<0o;5;6[o;3	;"bones-blue;iQ;4"bones_blue;	@o;7;i;8["%;9"10%;iQ;	@;:[ ;"darken;iQ;;{ ;	@;<0;"css-gradient;iQ;;{ ;	@;
+[ ;<0o;;["&:active;o;;[o;;[o;
+;[o;$;" ;iSo;%
+;@#;["active;;&;iS;'0;@#;o;;{ ;iS;0;@#;iS;iS;T;	@;i ;
+[o;L;6[o;5;6[o;3	;"bones-blue;iT;4"bones_blue;	@o;7;i
+;8["%;9"5%;iT;	@;:[ ;"darken;iT;;{ ;	@;<0o;3	;"bones-blue;iT;4"bones_blue;	@;"css-gradient;iT;;{ ;	@;
+[ ;<0

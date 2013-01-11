@@ -92,10 +92,6 @@ MEDIA QUERIES
 		only screen and (-webkit-max-device-pixel-ratio: 1.4),
 		only screen and (max-device-pixel-ratio: 1.4) { @content; }
 	}
-	@if $point == iphone-five {
-		@media (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2) { @content; }
-	}
-
 	@if $point == big-huge {
 		@media only screen and (min-width: 64.0625em) and (max-width: 78em) { @content; } // 1030px - 1240px
 	}

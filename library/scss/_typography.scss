@@ -1,0 +1,49 @@
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: Typography Stylsheet
+
+******************************************************************/
+
+@include breakpoint(tiny){
+
+	// < 30em / 480px
+
+} // END tiny breakppint
+
+@include breakpoint(small-up){
+
+	// >= 30em / 480px
+
+} // END small-up breakpoint
+
+@include breakpoint(small-mid){
+
+	// 30.0625em / 481px - 47.875em / 767px
+
+} // END small-mid breakpoint
+
+@include breakpoint(mid-up){
+
+	// >= 48em / 768px
+
+} // END mid-up breakpoint
+
+@include breakpoint(mid-big){
+
+	// 48em / 768px - 64em - 1030px
+
+} // END mid-big breakpoint
+
+@include breakpoint(big-up){
+
+	// >= 64.0625em / 1031px
+	
+} // END big-up breakpoint
+
+@include breakpoint(big-huge){
+
+	// 64.0625em / 1031px - 78em / 1240px
+
+} // END big-huge breakpoint
